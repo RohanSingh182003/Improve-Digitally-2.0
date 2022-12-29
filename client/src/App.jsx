@@ -6,8 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 // import routes as lazy components
-const LazyHomeLayout = React.lazy(() =>
-  import("./components/layouts/HomeLayout")
+const LazyBaseLayout = React.lazy(() =>
+  import("./components/layouts/BaseLayout")
 );
 const LazyHome = React.lazy(() => import("./components/home/Home"));
 
@@ -18,7 +18,7 @@ const App = () => {
         path={"/"}
         element={
           <React.Suspense fallback="Loading.....">
-            <LazyHomeLayout />
+            <LazyBaseLayout />
           </React.Suspense>
         }
       >
