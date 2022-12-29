@@ -1,6 +1,8 @@
 import React from "react";
 import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare, AiFillYoutube, AiOutlineDown } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
+import "./navbar.css"
 
 const Menu = ({ setToggle }) => {
   return (
@@ -20,15 +22,15 @@ const Menu = ({ setToggle }) => {
       </div>
       {/* ------------------------------------- menu items -------------------------------------*/}
       <div className="w-full">
-        <div className="w-full p-4 border-b mt-4">
-          <p className="font-extrabold">Home</p>
-        </div>
-        <div className="w-full p-4 border-b mt-4">
-          <p className="font-extrabold">Blog</p>
-        </div>
-        <div className="w-full p-4 border-b mt-4">
-          <p className="font-extrabold">Contact Us</p>
-        </div>
+        <ul className="w-full p-4 border-b mt-4">
+          <NavLink to={'/'} className="font-extrabold">Home</NavLink>
+        </ul>
+        <ul className="w-full p-4 border-b mt-4">
+          <NavLink to={'/blogs'} className="font-extrabold">Blog</NavLink>
+        </ul>
+        <ul className="w-full p-4 border-b mt-4">
+          <NavLink to={'/contacts'} className="font-extrabold">Contact Us</NavLink>
+        </ul>
         {/* ---------------------- Web Development Accordian ---------------------- */}
         <div className="collapse border-b mt-4">
           <input type="checkbox" className="peer" />

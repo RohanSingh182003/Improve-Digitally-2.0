@@ -10,6 +10,8 @@ const LazyBaseLayout = React.lazy(() =>
   import("./components/layouts/BaseLayout")
 );
 const LazyHome = React.lazy(() => import("./components/home/Home"));
+const LazyBlogs = React.lazy(() => import("./components/blog/Blog"));
+const LazyContact = React.lazy(() => import("./components/contact/Contact"));
 
 const App = () => {
   const router = createBrowserRouter(
@@ -26,7 +28,23 @@ const App = () => {
           index
           element={
             <React.Suspense fallback="Loading.....">
-              <LazyHome/>
+              <LazyHome />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/blogs"
+          element={
+            <React.Suspense fallback="Loading.....">
+              <LazyBlogs />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <React.Suspense fallback="Loading.....">
+              <LazyContact />
             </React.Suspense>
           }
         />

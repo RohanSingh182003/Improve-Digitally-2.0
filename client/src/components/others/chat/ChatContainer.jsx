@@ -3,7 +3,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const ChatContainer = ({setToggle}) => {
     return (
-      <div className="mb-6 w-full h-[80vh] md:w-64 md:h-[28rem] border rounded-lg overflow-hidden flex flex-col shadow-xl">
+      <div className="mb-6 w-full h-[80vh] md:w-64 md:h-[28rem] rounded-lg overflow-hidden flex flex-col shadow-xl">
         {/* chat heading */}
         <div className="w-full h-14 flex justify-between items-center bg-orange-500 text-white px-6">
           <p>Improve Digitally</p>

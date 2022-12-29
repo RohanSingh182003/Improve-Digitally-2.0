@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import "./navbar.css"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiPhoneCall } from "react-icons/bi";
 import Menu from "./Menu";
 import { AiOutlineDown } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -19,16 +21,16 @@ const Navbar = () => {
         <span className="text-orange-500">Digitally</span>
       </p>
       {/* ---------------------------- for large device only ---------------------------- */}
-      <div className="hidden lg:flex items-center justify-evenly lg:space-x-8 xl:space-x-12">
-        <p className="cursor-pointer hover:text-orange-500 font-semibold">
+      <ul className="hidden lg:flex items-center justify-evenly lg:space-x-8 xl:space-x-12">
+        <NavLink to={'/'} className="cursor-pointer hover:text-orange-500 font-semibold">
           Home
-        </p>
-        <p className="cursor-pointer hover:text-orange-500 font-semibold">
+        </NavLink>
+        <NavLink to={'/blogs'} className="cursor-pointer hover:text-orange-500 font-semibold">
           Blog
-        </p>
-        <p className="cursor-pointer hover:text-orange-500 font-semibold">
+        </NavLink>
+        <NavLink to={'/contacts'} className="cursor-pointer hover:text-orange-500 font-semibold">
           Contact Us
-        </p>
+        </NavLink>
         <div className="dropdown dropdown-hover">
           <label tabIndex={0} className='flex space-x-2 items-center cursor-pointer hover:text-orange-500'>
             <p className="font-semibold">
@@ -67,7 +69,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </ul>
       <div className="flex space-x-2 md:space-x-4 items-center">
         <div className="flex items-center space-x-1">
           <BiPhoneCall className="text-3xl bg-orange-500 text-white rounded-full p-1" />
