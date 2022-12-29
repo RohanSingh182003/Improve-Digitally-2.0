@@ -1,0 +1,38 @@
+[
+  {
+    "color": "cyan",
+    "type": "x",
+    "incRate": 10,
+    "defination": "Increase in Website Organic Traffic"
+  },
+  {
+    "color": "orange",
+    "type": "x",
+    "incRate": 5,
+    "defination": "Increase in Quality Conversations"
+  },
+  {
+    "color": "purple",
+    "type": "%",
+    "incRate": 45,
+    "defination": "Growth on Social Media"
+  },
+  {
+    "color": "cyan",
+    "type": "%",
+    "incRate": 33,
+    "defination": "Quality Conversations Through Social Media"
+  },
+  {
+    "color": "orange",
+    "type": "x",
+    "incRate": 18,
+    "defination": "Increase in Conversions Through Email"
+  },
+  {
+    "color": "purple",
+    "type": "%",
+    "incRate": 50,
+    "defination": "Higher Conversion for Local Business"
+  }
+]
