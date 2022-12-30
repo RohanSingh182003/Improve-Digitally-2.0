@@ -244,7 +244,7 @@ const Home = () => {
               <img
                 src={BlogImg1}
                 alt="BlogImg1"
-                className="hover:scale-105 transition-all duration-300"
+                className="hover:scale-110 transition-all duration-300"
               />
             </figure>
             <div className="card-body">
@@ -265,7 +265,7 @@ const Home = () => {
               <img
                 src={BlogImg2}
                 alt="BlogImg2"
-                className="hover:scale-105 transition-all duration-300"
+                className="hover:scale-110 transition-all duration-300"
               />
             </figure>
             <div className="card-body">
@@ -286,7 +286,7 @@ const Home = () => {
               <img
                 src={BlogImg3}
                 alt="BlogImg3"
-                className="hover:scale-105 transition-all duration-300"
+                className="hover:scale-110 transition-all duration-300"
               />
             </figure>
             <div className="card-body">
@@ -370,7 +370,7 @@ const Home = () => {
               <img
                 src={OurLatestMedia1}
                 alt="OurLatestMedia1"
-                className="hover:scale-105 transition-all duration-300"
+                className="hover:scale-110 transition-all duration-300"
               />
             </figure>
             <div className="card-body">
@@ -392,7 +392,7 @@ const Home = () => {
               <img
                 src={OurLatestMedia2}
                 alt="OurLatestMedia2"
-                className="hover:scale-105 transition-all duration-300"
+                className="hover:scale-110 transition-all duration-300"
               />
             </figure>
             <div className="card-body">
@@ -413,7 +413,7 @@ const Home = () => {
               <img
                 src={OurLatestMedia3}
                 alt="OurLatestMedia3"
-                className="hover:scale-105 transition-all duration-300"
+                className="hover:scale-110 transition-all duration-300"
               />
             </figure>
             <div className="card-body">
