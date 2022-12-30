@@ -10,7 +10,7 @@ const BlogPosts = () => {
         </div>
         <div className="p-4">
             {/* blog title */}
-            <p className='font-bold text-lg'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <p className='font-bold text-lg hover:text-blue-700 cursor-pointer'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
             {/* blog description */}
             <p className='mt-4 text-gray-800'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ratione maiores corrupti excepturi quasi explicabo placeat aperiam libero fuga fugit, fugiat voluptates accusantium soluta odit doloremque eaque quia natus. Magni?</p>
         </div>

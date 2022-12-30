@@ -5,6 +5,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import Loader from "./components/others/spinner/Loader"
 // import routes as lazy components
 const LazyBaseLayout = React.lazy(() =>
   import("./components/layouts/BaseLayout")
@@ -19,7 +20,7 @@ const App = () => {
       <Route
         path={"/"}
         element={
-          <React.Suspense fallback="Loading.....">
+          <React.Suspense fallback={<Loader/>}>
             <LazyBaseLayout />
           </React.Suspense>
         }
@@ -27,7 +28,7 @@ const App = () => {
         <Route
           index
           element={
-            <React.Suspense fallback="Loading.....">
+            <React.Suspense fallback={<Loader/>}>
               <LazyHome />
             </React.Suspense>
           }
@@ -35,7 +36,7 @@ const App = () => {
         <Route
           path="/blogs"
           element={
-            <React.Suspense fallback="Loading.....">
+            <React.Suspense fallback={<Loader/>}>
               <LazyBlogs />
             </React.Suspense>
           }
@@ -43,7 +44,7 @@ const App = () => {
         <Route
           path="/contacts"
           element={
-            <React.Suspense fallback="Loading.....">
+            <React.Suspense fallback={<Loader/>}>
               <LazyContact />
             </React.Suspense>
           }
