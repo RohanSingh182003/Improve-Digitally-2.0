@@ -1,3 +1,4 @@
+const path = require("path");
 const Blog = require("../models/BlogSchema");
 
 const GetBlogPosts = async (req, res) => {
@@ -12,7 +13,7 @@ const GetBlogPosts = async (req, res) => {
 const GetBlogPost = async (req, res) => {
   try {
     const _id = req.params.id;
-    const allBlogs = await Blog.find({ _id });
+    const allBlogs = await Blog.findOne({ _id });
     res.status(200).send(allBlogs);
   } catch (error) {
     res.status(500).send(error.message);
@@ -24,7 +25,17 @@ const AddBlogPost = async (req, res) => {
     const { author, title, content } = req.body;
     const alreadyExists = await Blog.findOne({ $and: [{ author, title }] });
     if (alreadyExists) return res.status(400).send("Post already exists!");
-    const newPost = { author, title, content };
+    const newPost = {
+      author,
+      title,
+      content,
+      image: `http://localhost:4000/api/blogs/static/${author
+        .split(" ")
+        .join("")
+        .toLowerCase()}/${req.body.title.split(" ").join("")}${path.extname(
+        req.file.filename
+      )}`,
+    };
     const response = await Blog.create(newPost);
     res.status(200).send(response);
   } catch (error) {
@@ -35,7 +46,7 @@ const AddBlogPost = async (req, res) => {
 const UpdateBlogPost = async (req, res) => {
   try {
     const _id = req.params.id;
-    const alreadyExists = await Blog.findOne({ _id});
+    const alreadyExists = await Blog.findOne({ _id });
     if (!alreadyExists) return res.status(400).send("Post doesn't exists!");
     const { author, title, content } = req.body;
     const newPost = { author, title, content };
@@ -49,7 +60,7 @@ const UpdateBlogPost = async (req, res) => {
 const DeleteBlogPost = async (req, res) => {
   try {
     const _id = req.params.id;
-    const alreadyExists = await Blog.findOne({ _id});
+    const alreadyExists = await Blog.findOne({ _id });
     if (!alreadyExists) return res.status(400).send("Post doesn't exists!");
     const response = await Blog.findByIdAndDelete({ _id });
     res.status(200).send(response);

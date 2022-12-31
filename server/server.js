@@ -17,5 +17,8 @@ mongoose.connect(mongoURI).then(()=> console.log('DB Connected!'))
 // listening app 
 app.listen(port,()=> console.log(`alive on ${port}`))
 
+// serve static files 
+app.use('/api/blogs/static', express.static('uploads'))
+
 // api endpoints 
 app.use('/api/blogs',BlogRoutes)
