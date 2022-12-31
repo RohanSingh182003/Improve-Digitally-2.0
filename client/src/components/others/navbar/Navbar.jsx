@@ -31,44 +31,12 @@ const Navbar = () => {
         <NavLink to={'/contacts'} className="cursor-pointer hover:text-orange-500 font-semibold">
           Contact Us
         </NavLink>
-        <div className="dropdown dropdown-hover">
-          <label tabIndex={0} className='flex space-x-2 items-center cursor-pointer hover:text-orange-500'>
-            <p className="font-semibold">
-              Web Development
-            </p>
-            <AiOutlineDown/>
-          </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-          </ul>
-        </div>
-        <div className="dropdown dropdown-hover">
-          <label tabIndex={0} className='flex space-x-2 items-center cursor-pointer hover:text-orange-500'>
-            <p className="cursor-pointer hover:text-orange-500 font-semibold">
-              Company
-            </p>
-            <AiOutlineDown/>
-          </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-          </ul>
-        </div>
+        <NavLink to={'/writeBlog'} className="cursor-pointer hover:text-orange-500 font-semibold">
+          Write a Blog
+        </NavLink>
+        <NavLink to={'/login'} className="cursor-pointer hover:text-orange-500 font-semibold">
+          Login as Admin
+        </NavLink>
       </ul>
       <div className="flex space-x-2 md:space-x-4 items-center">
         <div className="flex items-center space-x-1">

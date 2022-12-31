@@ -31,38 +31,12 @@ const Menu = ({ setToggle }) => {
         <ul className="w-full p-4 border-b mt-4">
           <NavLink to={'/contacts'} className="font-extrabold">Contact Us</NavLink>
         </ul>
-        {/* ---------------------- Web Development Accordian ---------------------- */}
-        <div className="collapse border-b mt-4">
-          <input type="checkbox" className="peer" />
-          <div className="collapse-title text-gray-900 flex items-center justify-between">
-            <p className="font-extrabold">About Us</p>
-            <AiOutlineDown className="text-gray-500" />
-          </div>
-          <div className="collapse-content text-gray-900">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              dignissimos earum dolores minus nisi illo fugiat odio ipsa quis
-              expedita accusamus consectetur, architecto iste id nostrum
-              accusantium, nemo harum explicabo.
-            </p>
-          </div>
-        </div>
-        {/* ---------------------- Company Accordian ---------------------- */}
-        <div className="collapse border-b mt-4">
-          <input type="checkbox" className="peer" />
-          <div className="collapse-title text-gray-900 flex items-center justify-between">
-            <p className="font-extrabold">Company</p>
-            <AiOutlineDown className="text-gray-500" />
-          </div>
-          <div className="collapse-content text-gray-900">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae corrupti fuga odit libero velit dolorem dicta, beatae
-              tenetur magni dignissimos aut obcaecati earum. Rem minima autem
-              sequi ratione, temporibus ad.
-            </p>
-          </div>
-        </div>
+        <ul className="w-full p-4 border-b mt-4">
+          <NavLink to={'/writeBlog'} className="font-extrabold">Write a Blog</NavLink>
+        </ul>
+        <ul className="w-full p-4 border-b mt-4">
+          <NavLink to={'/login'} className="font-extrabold">Login as Admin</NavLink>
+        </ul>
       </div>
       {/* ------------------------------------- phone number -------------------------------------*/}
       <div className="w-full grid place-items-center px-6 mt-6">
