@@ -55,7 +55,7 @@ const Contact = () => {
             </div>
         </div>
         {/* contact location */}
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28035.13728702772!2d77.27377946247563!3d28.55798447660449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce40b2f9e830d%3A0x864d93c20efa1e78!2sJamia%20Nagar%2C%20Okhla%2C%20New%20Delhi%2C%20Delhi%20110025!5e0!3m2!1sen!2sin!4v1672335000667!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className='w-full h-96 mt-8 md:mt-14 md:px-24' ></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28035.13728702772!2d77.27377946247563!3d28.55798447660449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce40b2f9e830d%3A0x864d93c20efa1e78!2sJamia%20Nagar%2C%20Okhla%2C%20New%20Delhi%2C%20Delhi%20110025!5e0!3m2!1sen!2sin!4v1672335000667!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='w-full h-96 mt-8 md:mt-14 md:px-24' ></iframe>
     </section>
   )
 }
