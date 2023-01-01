@@ -1,23 +1,35 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import axios from "axios";
 import ImagePlaceholderIcon from "../../assets/imgPlaceholderIcon.png";
 import { MiniBlogPosts } from "../blog/LatestPosts";
 import AppContext from "../../context/AppContext";
 
 const WriteBlog = () => {
+  const allBlogs = useLoaderData()
   const { user } = useContext(AppContext);
   const navigate = useNavigate();
   // decleare state variables
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (title === "" || content === "" || file === "") {
+    if (title === "" || content === "" || !file) {
       return toast.warn("please fill all the fields.");
     }
+    let res = await axios.post(
+      "http://localhost:4000/api/blogs",
+      { author: user, title, content, image: file },
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    toast.success("post uploaded successfully!");
   };
   useEffect(() => {
     if (!user) {
@@ -99,7 +111,6 @@ const WriteBlog = () => {
             </label>
             <input
               required
-              value={file}
               onChange={(e) => setFile(e.target.files[0])}
               type="file"
               id="img"
@@ -119,3 +130,8 @@ const WriteBlog = () => {
 };
 
 export default WriteBlog;
+
+export const BlogLoader = async () => {
+  let res = await axios.get("http://localhost:4000/api/blogs");
+  return res.data;
+};

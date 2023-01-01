@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Loader from "./components/others/spinner/Loader";
+import { BlogLoader } from "./components/writeBlog/WriteBlog";
 import AppState from "./context/AppState";
 // import routes as lazy components
 const LazyBaseLayout = React.lazy(() =>
@@ -48,9 +49,10 @@ const App = () => {
         />
         <Route
           path="/writeBlog"
+          loader={<BlogLoader/>}
           element={
             <React.Suspense fallback={<Loader />}>
-              <LazyWriteBlog />
+              <LazyWriteBlog/>
             </React.Suspense>
           }
         />
