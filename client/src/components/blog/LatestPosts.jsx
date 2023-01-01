@@ -18,7 +18,7 @@ const LatestPosts = () => {
 
 export default LatestPosts
 
-const MiniBlogPosts = () => {
+export const MiniBlogPosts = () => {
     return (
         <div className='grid grid-cols-4 mb-4'>
             {/* blog image */}

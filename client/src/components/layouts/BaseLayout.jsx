@@ -11,8 +11,8 @@ const HomeLayout = () => {
         <Navbar/>
         <ToastifyContainer/>
         <Outlet/>
-        <Chat/>
         <Footer/>
+        <Chat/>
     </>
   )
 }

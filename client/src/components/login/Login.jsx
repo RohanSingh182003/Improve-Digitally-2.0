@@ -19,9 +19,9 @@ const Login = () => {
         }
     }
   return (
-    <div className='min-h-[80vh] grid place-items-center'>
+    <div className='min-h-[90vh] grid place-items-center bg-gradient-to-r from-cyan-300 to-pink-300'>
         {/* login contaier */}
-        <div className="h-full w-full border rounded-md md:w-64 md:h-auto">
+        <div className="h-full w-full md:w-64 md:h-auto backdrop-blur-lg bg-white/20">
             {/* title */}
             <div className="p-4 grid place-items-center">
             <AiOutlineLock className='text-center text-6xl'/>
