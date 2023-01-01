@@ -1,10 +1,18 @@
-import React from "react";
-import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare, AiFillYoutube, AiOutlineDown } from "react-icons/ai";
+import React, { useContext } from "react";
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiFillTwitterSquare,
+  AiFillYoutube,
+} from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
-import "./navbar.css"
+import { Link, NavLink } from "react-router-dom";
+import AppContext from "../../../context/AppContext";
+import "./navbar.css";
 
 const Menu = ({ setToggle }) => {
+  const { user, logout } = useContext(AppContext);
   return (
     <div className="min-h-screen w-full absolute top-0 left-0 bg-white">
       {/* ------------------------------------- heading -------------------------------------*/}
@@ -23,20 +31,36 @@ const Menu = ({ setToggle }) => {
       {/* ------------------------------------- menu items -------------------------------------*/}
       <div className="w-full">
         <ul className="w-full p-4 border-b mt-4">
-          <NavLink to={'/'} className="font-extrabold">Home</NavLink>
+          <NavLink to={"/"} className="font-extrabold">
+            Home
+          </NavLink>
         </ul>
         <ul className="w-full p-4 border-b mt-4">
-          <NavLink to={'/blogs'} className="font-extrabold">Blog</NavLink>
+          <NavLink to={"/blogs"} className="font-extrabold">
+            Blog
+          </NavLink>
         </ul>
         <ul className="w-full p-4 border-b mt-4">
-          <NavLink to={'/contacts'} className="font-extrabold">Contact Us</NavLink>
+          <NavLink to={"/contacts"} className="font-extrabold">
+            Contact Us
+          </NavLink>
         </ul>
         <ul className="w-full p-4 border-b mt-4">
-          <NavLink to={'/writeBlog'} className="font-extrabold">Write a Blog</NavLink>
+          <NavLink to={"/writeBlog"} className="font-extrabold">
+            Write a Blog
+          </NavLink>
         </ul>
-        <ul className="w-full p-4 border-b mt-4">
-          <NavLink to={'/login'} className="font-extrabold">Login as Admin</NavLink>
-        </ul>
+        {user ? (
+          <ul onClick={logout} className="w-full p-4 border-b mt-4">
+            <Link to='/' className="font-extrabold">Logout</Link>
+          </ul>
+        ) : (
+          <ul className="w-full p-4 border-b mt-4">
+            <NavLink to={"/login"} className="font-extrabold">
+              Login as Admin
+            </NavLink>
+          </ul>
+        )}
       </div>
       {/* ------------------------------------- phone number -------------------------------------*/}
       <div className="w-full grid place-items-center px-6 mt-6">
@@ -53,11 +77,11 @@ const Menu = ({ setToggle }) => {
       </div>
       {/* ------------------------------------- social icons -------------------------------------*/}
       <div className="w-full flex items-center justify-center space-x-2 px-6 mt-5">
-        <AiFillFacebook className="text-4xl text-blue-500"/>
-        <AiFillYoutube className="text-4xl text-red-500"/>
-        <AiFillTwitterSquare className="text-4xl text-cyan-500"/>
-        <AiFillInstagram className="text-4xl text-red-500"/>
-        <AiFillLinkedin className="text-4xl text-blue-500"/>
+        <AiFillFacebook className="text-4xl text-blue-500" />
+        <AiFillYoutube className="text-4xl text-red-500" />
+        <AiFillTwitterSquare className="text-4xl text-cyan-500" />
+        <AiFillInstagram className="text-4xl text-red-500" />
+        <AiFillLinkedin className="text-4xl text-blue-500" />
       </div>
     </div>
   );

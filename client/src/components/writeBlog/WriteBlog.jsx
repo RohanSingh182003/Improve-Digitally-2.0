@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import ImagePlaceholderIcon from "../../assets/imgPlaceholderIcon.png";
 import { MiniBlogPosts } from "../blog/LatestPosts";
+import AppContext from "../../context/AppContext";
 
 const WriteBlog = () => {
+  const { user } = useContext(AppContext);
+  const navigate = useNavigate();
   // decleare state variables
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -15,6 +19,15 @@ const WriteBlog = () => {
       return toast.warn("please fill all the fields.");
     }
   };
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+      setTimeout(() => {
+        toast.warn("please login first!");
+      }, 500);
+    }
+  }, []);
+
   return (
     <section>
       <div className="h-32 md:h-64 bg-gray-900 text-gray-100 md:px-32 grid place-items-center md:place-items-start">

@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import "./navbar.css"
+import React, { useContext, useState } from "react";
+import "./navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiPhoneCall } from "react-icons/bi";
 import Menu from "./Menu";
-import { AiOutlineDown } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import AppContext from "../../../context/AppContext";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const { user , logout } = useContext(AppContext);
   return (
     <div className="border shadow-lg w-full h-14 md:h-24 flex justify-between items-center p-4 sticky top-0 bg-white z-50">
       {/* ---------------------------- for small & medium device only ---------------------------- */}
@@ -22,21 +23,42 @@ const Navbar = () => {
       </p>
       {/* ---------------------------- for large device only ---------------------------- */}
       <ul className="hidden lg:flex items-center justify-evenly lg:space-x-8 xl:space-x-12">
-        <NavLink to={'/'} className="cursor-pointer hover:text-orange-500 font-semibold">
+        <NavLink
+          to={"/"}
+          className="cursor-pointer hover:text-orange-500 font-semibold"
+        >
           Home
         </NavLink>
-        <NavLink to={'/blogs'} className="cursor-pointer hover:text-orange-500 font-semibold">
+        <NavLink
+          to={"/blogs"}
+          className="cursor-pointer hover:text-orange-500 font-semibold"
+        >
           Blog
         </NavLink>
-        <NavLink to={'/contacts'} className="cursor-pointer hover:text-orange-500 font-semibold">
+        <NavLink
+          to={"/contacts"}
+          className="cursor-pointer hover:text-orange-500 font-semibold"
+        >
           Contact Us
         </NavLink>
-        <NavLink to={'/writeBlog'} className="cursor-pointer hover:text-orange-500 font-semibold">
+        <NavLink
+          to={"/writeBlog"}
+          className="cursor-pointer hover:text-orange-500 font-semibold"
+        >
           Write a Blog
         </NavLink>
-        <NavLink to={'/login'} className="cursor-pointer hover:text-orange-500 font-semibold">
-          Login as Admin
-        </NavLink>
+        {user ? (
+          <Link to='/' onClick={logout} className="cursor-pointer hover:text-orange-500 font-semibold">
+            Logout
+          </Link>
+        ) : (
+          <NavLink
+            to={"/login"}
+            className="cursor-pointer hover:text-orange-500 font-semibold"
+          >
+            Login as Admin
+          </NavLink>
+        )}
       </ul>
       <div className="flex space-x-2 md:space-x-4 items-center">
         <div className="flex items-center space-x-1">

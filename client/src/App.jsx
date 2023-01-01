@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Loader from "./components/others/spinner/Loader";
+import AppState from "./context/AppState";
 // import routes as lazy components
 const LazyBaseLayout = React.lazy(() =>
   import("./components/layouts/BaseLayout")
@@ -16,7 +17,7 @@ const LazyContact = React.lazy(() => import("./components/contact/Contact"));
 const LazyWriteBlog = React.lazy(() =>
   import("./components/writeBlog/WriteBlog")
 );
-const LazyLogin = React.lazy(()=> import("./components/login/Login"))
+const LazyLogin = React.lazy(() => import("./components/login/Login"));
 
 const App = () => {
   const router = createBrowserRouter(
@@ -72,7 +73,11 @@ const App = () => {
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <AppState>
+      <RouterProvider router={router} />
+    </AppState>
+  );
 };
 
 export default App;
