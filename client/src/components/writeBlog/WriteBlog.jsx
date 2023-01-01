@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import ImagePlaceholderIcon from "../../assets/imgPlaceholderIcon.png";
 import { MiniBlogPosts } from "../blog/LatestPosts";
 import AppContext from "../../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const WriteBlog = () => {
-  const allBlogs = useLoaderData()
   const { user } = useContext(AppContext);
   const navigate = useNavigate();
   // decleare state variables
@@ -130,8 +129,3 @@ const WriteBlog = () => {
 };
 
 export default WriteBlog;
-
-export const BlogLoader = async () => {
-  let res = await axios.get("http://localhost:4000/api/blogs");
-  return res.data;
-};
